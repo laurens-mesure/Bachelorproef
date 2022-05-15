@@ -71,7 +71,13 @@ def detect_temp():
     temp_c = float(lines[0]) / 1000.0
     print("\U0001f321: The current temperature is: %s\n" % (temp_c))
 
+def read_time():
+    t = time.localtime()
+    current_time = time.strftime("%H:%M:%S", t)
+    print("\U0001f553: It is currenlty %s" % (current_time))
+
 while True:
+    read_time()
     detect_water(water_pin)
     detect_light(light_pin)
     detect_temp()
